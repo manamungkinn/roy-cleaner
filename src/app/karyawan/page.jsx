@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const employees = [
-  { id: 1, name: "Roy Priman", position: "Ceo", image: "/images/roy.jpg", detail: "" },
-  { id: 2, name: "Novita", position: "Manager", image: "/images/novita.jpg", detail: "" },
-  { id: 3, name: "Kang Andre", position: "Duda", image: "/images/andre.jpg", detail: "" },
-  { id: 4, name: "bg kael", position: "Hanya Penikmat Bukan Pecandu", image: "/images/mikael.jpg", detail: "" },
+  { id: 1, name: "Roy Priman", position: "Ceo", image: "/images/roy.jpg", detail: "https://www.instagram.com/roymen.y/" },
+  { id: 2, name: "Novita", position: "Manager", image: "/images/novita.jpg", detail: "https://www.instagram.com/vitauliii_/" },
+  { id: 3, name: "Kang Andre", position: "Duda", image: "/images/andre.jpg", detail: "https://www.instagram.com/_anefsi/" },
+  { id: 4, name: "bg kael", position: "Hanya Penikmat Bukan Pecandu", image: "/images/mikael.jpg", detail: "https://www.instagram.com/mikaelhotasii/" },
+  { id: 5, name: "si indra", position: "Tukang Sapu Kos Sitompul", image: "/images/indra.jpg", detail: "https://www.instagram.com/arn28._/" },
 ];
 
 const EmployeePage = () => {
@@ -19,7 +20,7 @@ const EmployeePage = () => {
             <Image width={200} height={200} src={employee.image} alt={employee.name} className="w-55 h-50 rounded-full mx-auto" />
             <h2 className="text-xl font-semibold mt-3 text-center">{employee.name}</h2>
             <p className="text-center text-gray-600">{employee.position}</p>
-            <Link href={employee.detail} className="text-center block mt-3 text-blue-500 hover:underline">
+            <Link href={employee.detail} className="text-center text-sm md:text-base block mt-3 text-blue-500 hover:underline">
               Lihat Detail
             </Link>
           </div>
