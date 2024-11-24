@@ -78,7 +78,7 @@ const ContactPage = () => {
                 </label>
                 <textarea id="message" name="pesan" rows="5" placeholder="Pesan Anda" className="w-full border border-gray-300 rounded-lg p-3 focus:ring focus:ring-green-300" required></textarea>
               </div>
-              <button type="submit" className="w-full bg-main-primary text-textColor-white font-bold py-3 rounded-lg hover:bg-green-600 transition duration-300">
+              <button type="submit" className="w-full bg-main-primary text-textColor-white font-bold py-3 rounded-lg hover:bg-main-accent transition duration-300">
                 {loading ? <span className="loading loading-dots loading-md"></span> : "Kirim Pesan"}
               </button>
             </form>
