@@ -1,5 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Toaster } from 'sonner';
+import ButonScrollTop from "@/components/ButtonScrollTop";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,11 +23,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth"> 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {<Toaster position="top-center"/>}
+        {<Navbar/>}
         {children}
+        {<Footer/>}
+      <div className="fixed bottom-5 right-5 z-50">{<ButonScrollTop />}</div>
       </body>
     </html>
   );
