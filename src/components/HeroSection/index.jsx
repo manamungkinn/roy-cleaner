@@ -71,7 +71,7 @@ const HeroSection = () => {
       <div className="relative w-full md:h-screen">
         {/* Full-width Image */}
         <div className="inset-0">
-          <Image src={images[currentImageIndex].image} alt={`Hero Image ${currentImageIndex + 1}`} width={1000} height={1000} quality={100} className="transition-opacity duration-700" />
+          <Image src={images[currentImageIndex].image} alt={`Hero Image ${currentImageIndex + 1}`} width={1000} height={1000} quality={100} className="w-full transition-opacity duration-700" />
         </div>
         
           {/* Centered Description */}
@@ -83,7 +83,7 @@ const HeroSection = () => {
           </div>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-3 md:bottom-[20%] min-[800px]:bottom-[55%] lg:bottom-[15%] left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-3 md:bottom-[20%] min-[800px]:bottom-[55%] lg:bottom-[15%] xl:bottom-[10%] left-1/2 transform -translate-x-1/2 flex space-x-2">
             {images.map((_, index) => (
               <button key={index} onClick={() => handleDotClick(index)} className={`w-1 h-1 md:w-3 md:h-3 rounded-full ${index === currentImageIndex ? "bg-primary" : "bg-gray-400"}`}></button>
             ))}
