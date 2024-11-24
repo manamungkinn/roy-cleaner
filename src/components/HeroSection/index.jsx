@@ -6,10 +6,10 @@ import Link from "next/link";
 
 const HeroSection = () => {
   const images = [
-    { image: "/images/clean4.webp", deskripsi: "Cape Bersihin Rumah??..", linkTitle: "Hubungi Kami", link: "/" },
-    { image: "/images/lastBgIndra.png", deskripsi: "Roy Cleaner Aja", linkTitle: "Hubungi Indra", link: "https://www.instagram.com/arn28._/" },
+    { image: "/images/clean4.webp", deskripsi: "Cape Bersihin Rumah??..", linkTitle: "RoyCleaner Aja", link: "/" },
+    { image: "/images/lastBgIndra.png", deskripsi: "Membersihkan Apa Aja", linkTitle: "Hubungi Indra", link: "https://www.instagram.com/arn28._/" },
     { image: "/images/clean2.jpg", deskripsi: "Pelayanan Terbaik", linkTitle: "Instagram Kami", link: "https://www.instagram.com/roymen.y/" },
-    { image: "/images/roy2.png", deskripsi: "Roy Bongek", linkTitle: "AWokkw", link: "https://www.instagram.com/roymen.y/" },
+    { image: "/images/roy2.png", deskripsi: "Tunggu apa lagi", linkTitle: "Hubungi Roy", link: "https://www.instagram.com/roymen.y/" },
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -83,7 +83,7 @@ const HeroSection = () => {
           </div>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-3 md:bottom-[20%] min-[800px]:bottom-[55%] lg:bottom-[15%] xl:bottom-[10%] left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-3 md:bottom-[20%] min-[800px]:bottom-[45%] lg:bottom-[15%] xl:bottom-[10%] left-1/2 transform -translate-x-1/2 flex space-x-2">
             {images.map((_, index) => (
               <button key={index} onClick={() => handleDotClick(index)} className={`w-1 h-1 md:w-3 md:h-3 rounded-full ${index === currentImageIndex ? "bg-primary" : "bg-gray-400"}`}></button>
             ))}
