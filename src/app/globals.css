@@ -21,16 +21,6 @@ body {
 }
 
 
-.loading {
-  width: 200px; /* Lebar elemen */
-  height: 200px; /* Tinggi elemen */
-  background-image: url('/images/mikael.jpg'); /* Path gambar */
-  background-size: cover; /* Gambar memenuhi elemen */
-  background-repeat: no-repeat; /* Gambar tidak diulang */
-  background-position: center; /* Posisikan gambar di tengah */
-
-}
-
 /* HTML: <div class="loader"></div> */
 .loader {
   --w:10ch;
