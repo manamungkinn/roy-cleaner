@@ -16,7 +16,7 @@ const EmployeePage = () => {
       <h1 className="text-3xl font-bold mb-5">Daftar Karyawan</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 ">
         {employees.map((employee) => (
-          <div key={employee.id} className="bg-white grid grid-rows-1 rounded-lg shadow-md hover:shadow-lg transition-all">
+          <div key={employee.id} className="bg-white grid grid-row s-1 rounded-lg shadow-md hover:shadow-lg transition-all">
             <Image width={200} height={200} src={employee.image} alt={employee.name} className="w-55 h-50 rounded-full mx-auto" />
             <h2 className="text-xl font-semibold mt-3 text-center">{employee.name}</h2>
             <p className="text-center text-gray-600">{employee.position}</p>
