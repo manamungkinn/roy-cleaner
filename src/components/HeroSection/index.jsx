@@ -27,7 +27,7 @@ const HeroSection = () => {
       if (!isAnimating) {
         setIsAnimating(true);
 
-        // Hilangkan teks dengan animasi zoom out
+        // Transisi teks dengan animasi zoom out
         gsap.to(deskripsiRef.current, {
           opacity: 0,
           scale: 0.8,
@@ -41,7 +41,7 @@ const HeroSection = () => {
           },
         });
       }
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isAnimating]);
@@ -50,7 +50,7 @@ const HeroSection = () => {
     if (!isAnimating) {
       setIsAnimating(true);
 
-      // Hilangkan teks dengan animasi zoom out
+      // Transisi teks dengan animasi zoom out
       gsap.to(deskripsiRef.current, {
         opacity: 0,
         scale: 0.8,
@@ -67,27 +67,31 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="container hero relative overflow-hidden mt-6">
-      <div className="relative w-full md:h-screen">
-        {/* Full-width Image */}
-        <div className="inset-0">
-          <Image src={images[currentImageIndex].image} alt={`Hero Image ${currentImageIndex + 1}`} width={1000} height={1000} quality={100} className="w-full transition-opacity duration-700" />
+    <div>
+      <div className="relative">
+        <Image src={images[currentImageIndex].image} alt={`Hero Image ${currentImageIndex + 1}`} width={1000} height={1000} quality={100} className="w-full transition-opacity duration-700" />
+        <div ref={deskripsiRef} key={currentImageIndex} className="absolute inset-0 flex items-center mt-[25%] justify-center">
+          <div className="flex flex-col items-center ">
+            <div>
+              <p className={`${images[currentImageIndex].deskripsi.length == 0 ? `` : `text-base w-fit sm:text-4xl md:text-5xl lg:text-6xl text-white bg-black bg-opacity-20 px-4 py-2 rounded-lg font-bold mb-3 sm:mb-6`}`}>
+                {images[currentImageIndex].deskripsi}
+              </p>
+            </div>
+            <div>
+              <Link
+                href={images[currentImageIndex].link}
+                className="text-xs md:text-base bg-main-dark bg-opacity-80 hover:bg-opacity-100 text-white border border-white p-1 min-[424px]:px-[10px] min-[424px]:py-[5px] rounded transition-all duration-300"
+              >
+                {images[currentImageIndex].linkTitle}
+              </Link>
+            </div>
+          </div>
         </div>
-        
-          {/* Centered Description */}
-          <div ref={deskripsiRef} key={currentImageIndex} className="absolute top-[60%] md:top-[50%] min-[800px]:top-[30%] lg:top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-[200px] md:w-[600px] md:max-w-[90%]">
-            <p className="text-base sm:text-4xl md:text-5xl lg:text-6xl text-white bg-black bg-opacity-20 px-4 py-2 rounded-lg font-bold mb-6">{images[currentImageIndex].deskripsi}</p>
-            <Link href={images[currentImageIndex].link} className="text-xs md:text-base inline-block bg-main-dark bg-opacity-80 hover:bg-opacity-100 text-white border border-white px-4 py-2 rounded transition-all duration-300">
-              {images[currentImageIndex].linkTitle}
-            </Link>
-          </div>
-
-          {/* Pagination Dots */}
-          <div className="absolute bottom-3 md:bottom-[20%] min-[800px]:bottom-[45%] lg:bottom-[15%] xl:bottom-[10%] left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {images.map((_, index) => (
-              <button key={index} onClick={() => handleDotClick(index)} className={`w-1 h-1 md:w-3 md:h-3 rounded-full ${index === currentImageIndex ? "bg-primary" : "bg-gray-400"}`}></button>
-            ))}
-          </div>
+        <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 ">
+          {images.map((_, index) => (
+            <button key={index} onClick={() => handleDotClick(index)} className={`w-1 h-1 mx-[2px] md:w-3 md:h-3 rounded-full ${index === currentImageIndex ? "bg-primary" : "bg-gray-400"}`}></button>
+          ))}
+        </div>
       </div>
     </div>
   );

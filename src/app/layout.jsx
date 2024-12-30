@@ -2,8 +2,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Toaster } from 'sonner';
+import { Toaster } from "sonner";
 import ButonScrollTop from "@/components/ButtonScrollTop";
+import Logo from "@/components/Navbar/logo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,21 +18,22 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "RoyCleaner",
-  description: "Bersihkan Semua Dengan RoyCeaner wkwk",
+  title: "RS Benaya",
+  description: "Kalo sakit kesini aja wkwk",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">  
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {<Toaster position="top-center"/>}
-        {<Navbar/>}
+    <html lang="en" className="scroll-smooth">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {<Toaster position="top-center" />}
+        <Logo/>
+        {<Navbar />}
         {children}
-        {<Footer/>}
-      <div className="fixed bottom-5 right-5 z-50">{<ButonScrollTop />}</div>
+        {<Footer />}
+        <div className="container">
+        <div className="fixed bottom-5 right-5 z-50">{<ButonScrollTop />}</div>
+        </div>
       </body>
     </html>
   );
