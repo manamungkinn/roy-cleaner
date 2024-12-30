@@ -18,8 +18,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "RS Benaya",
-  description: "Kalo sakit kesini aja wkwk",
+  title: "RoyCleaner",
+  description: "Bersihkan segalanya",
 };
 
 export default function RootLayout({ children }) {
